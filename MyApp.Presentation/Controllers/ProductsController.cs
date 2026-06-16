@@ -14,7 +14,7 @@ public class ProductsController(IProductService productService): ControllerBase
 
     public ActionResult<ProductApiModel> GetProductById(int id)
     {
-        var domainProduct = ProductApiModel.FromDomain(productService.GetProductById(id));
+        var domainProduct = ProductApiModel.FromDomain(productService.GetProduct(id));
         return Ok(domainProduct);
     }
 }

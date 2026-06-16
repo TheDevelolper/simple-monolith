@@ -3,10 +3,11 @@ using Testcontainers.MsSql;
 
 namespace MyApp.Integration.Tests;
 
+// ReSharper disable once ClassNeverInstantiated.Global
 public class DbIntegrationTestFixture: IAsyncLifetime
 {
     public required MsSqlContainer DbContainer { get; set; }
-    public HttpClient WebAppTestHttpClient { get; set; }
+    public HttpClient? WebAppTestHttpClient { get; set; }
     
     public async Task InitializeAsync()
     {
@@ -18,7 +19,7 @@ public class DbIntegrationTestFixture: IAsyncLifetime
         
         webAppFactory.WithWebHostBuilder(builder =>
         {
-            builder.ConfigureAppConfiguration((hostingContext, config) =>
+            builder.ConfigureAppConfiguration((_, config) =>
             {
                 config.Properties.Add("ConnectionString", DbContainer.GetConnectionString());
             });

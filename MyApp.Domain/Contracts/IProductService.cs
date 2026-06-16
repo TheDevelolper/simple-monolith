@@ -4,5 +4,5 @@ namespace Domain.Contracts;
 
 public interface IProductService
 {
-    Product GetProductById(int i);
+    Product GetProduct(int id);
 }

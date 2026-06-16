@@ -33,7 +33,7 @@ public class ProductControllerTests
         
         var mockProductService = new Mock<IProductService>();
 
-        mockProductService.Setup(moq => moq.GetProductById(1) )
+        mockProductService.Setup(moq => moq.GetProduct(1) )
             .Returns(fakeDomainProduct);
         
         var sut = new ProductsController(mockProductService.Object);
@@ -46,7 +46,7 @@ public class ProductControllerTests
         // assert
         
         // service was called
-        mockProductService.Verify(m => m.GetProductById(1), Times.Once);
+        mockProductService.Verify(m => m.GetProduct(1), Times.Once);
         
         Assert.NotNull(apiProduct);  
         Assert.IsType<ProductApiModel>(apiProduct);        
