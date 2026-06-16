@@ -4,6 +4,6 @@ namespace Data.Contracts;
 
 public interface IProductRepository
 {
-    public ProductEntity GetProduct(int id);
-    public IEnumerable<ProductEntity> GetProducts();
+    public ProductEntity? GetProduct(int id);
+    public IQueryable<ProductEntity> GetProducts();
 }

@@ -15,8 +15,10 @@ public class ProductApiModel()
     /// </summary>
     /// <param name="domainProductApiModel">The domain model for the product to be mapped</param>
     /// <returns>An API product model derived from the domain <see cref="Product"/> input parameter</returns>
-    internal static ProductApiModel FromDomain(Product domainProductApiModel)
+    internal static ProductApiModel? FromDomain(Product? domainProductApiModel)
     {
+        if (domainProductApiModel == null) return null;
+        
         var result = new ProductApiModel()
         {
             Id = domainProductApiModel.Id,

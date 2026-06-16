@@ -15,8 +15,10 @@ public record Product()
     /// </summary>
     /// <param name="productEntity">The product entity to map</param>
     /// <returns></returns>
-    public static Product From(ProductEntity productEntity)
+    public static Product? From(ProductEntity? productEntity)
     {
+        if (productEntity == null) return null;
+        
         var result = new Product()
         {
             Id = productEntity.Id,

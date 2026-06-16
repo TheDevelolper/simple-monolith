@@ -4,6 +4,7 @@
     <Project Path="MyApp.IntegrationTests\MyApp.IntegrationTests.csproj" />
   </Folder>
   <Folder Name="/Tests/Unit/">
+    <Project Path="MyApp.Data.UnitTests/MyApp.Data.UnitTests.csproj" />
     <Project Path="MyApp.Domain.UnitTests/MyApp.Domain.UnitTests.csproj" />
     <Project Path="MyApp.Presentation.UnitTests/MyApp.Presentation.UnitTests.csproj" />
   </Folder>

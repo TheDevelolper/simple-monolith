@@ -1,8 +1,18 @@
+using Data;
+using Data.Contracts;
+using Data.Repositories;
+using Domain.Contracts;
+using Domain.Services;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
-
-// builder.Services.Add<IProductService>();
-
+builder.Services
+    .AddTransient<IProductService, ProductService>()
+    .AddTransient<IProductRepository, ProductRepository>()
+    .AddDbContext<ProductDbContext>(options =>
+        options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
+    );
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -28,7 +38,5 @@ app.MapControllerRoute(
         name: "default",
         pattern: "{controller=Home}/{action=Index}/{id?}")
     .WithStaticAssets();
-
-
 
 app.Run();
