@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/Tests/">
+    <Project Path="MyApp.IntegrationTests\MyApp.IntegrationTests.csproj" />
+    <Project Path="MyApp.Presentation.UnitTests/MyApp.Presentation.UnitTests.csproj" />
+  </Folder>
+  <Project Path="MyApp.Data\MyApp.Data.csproj" />
+  <Project Path="MyApp.Domain\MyApp.Domain.csproj" />
+  <Project Path="MyApp.Presentation/MyApp.Presentation.csproj" />
+</Solution>
