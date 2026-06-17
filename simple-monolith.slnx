@@ -11,4 +11,5 @@
   <Project Path="MyApp.Data\MyApp.Data.csproj" />
   <Project Path="MyApp.Domain\MyApp.Domain.csproj" />
   <Project Path="MyApp.Presentation/MyApp.Presentation.csproj" />
+  <Project Path="MyApp.Shared/MyApp.Shared.csproj" />
 </Solution>
