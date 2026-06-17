@@ -1,9 +1,11 @@
 using Data.Entities;
+using MyApp.Shared;
 
 namespace Data.Contracts;
 
 public interface IProductRepository
 {
-    public ProductEntity? GetProduct(int id);
-    public IQueryable<ProductEntity> GetProducts();
+    Result<ProductEntity> GetProduct(int id);
+    Result<IQueryable<ProductEntity>> GetProducts();
+    Task<Result<List<ProductEntity>>> AddProductsAsync(List<ProductEntity> entities);
 }
