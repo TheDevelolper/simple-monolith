@@ -12,7 +12,7 @@ namespace MyApp.Integration.Tests;
 public class DbIntegrationTestFixture: IAsyncLifetime
 {
     public required MsSqlContainer DbContainer { get; set; }
-    public HttpClient? WebAppTestHttpClient { get; set; }
+    public HttpClient WebAppTestHttpClient { get; set; } = null!; // Intentional: Set in initialize, If this fails the tests will fail.
     
     public WebApplicationFactory<Program> WebAppFactory { get; set; }
     

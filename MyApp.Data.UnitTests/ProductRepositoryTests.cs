@@ -3,6 +3,7 @@ using Data.Entities;
 using Data.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Moq;
+using MyApp.Shared;
 
 namespace MyApp.Data.UnitTests;
 
@@ -43,7 +44,7 @@ public class ProductRepositoryTests
         var productRepository = new ProductRepository(fakeDbContext);
         
         // act
-        var products = productRepository.GetProducts();
+        var products = productRepository.GetProducts().Value;
 
         // assert
         Assert.NotNull(products);
@@ -51,5 +52,36 @@ public class ProductRepositoryTests
         Assert.Equal(2, products.Count());
         Assert.Equal(fakeProduct1, products.First());
         Assert.Equal(fakeProduct2, products.Last());
+    }
+
+    [Fact]
+    public async Task CanAddProducts()
+    {
+        var productsToAdd = new List<ProductEntity>
+        {
+            new() { Id = 1, Name = "Product 1" },
+            new() { Id = 2, Name = "Product 2" },
+        };
+
+        var options = new DbContextOptionsBuilder<ProductDbContext>()
+            .UseInMemoryDatabase(Guid.NewGuid().ToString())
+            .Options;
+
+        using var fakeDbContext = new ProductDbContext(options);
+        var productRepository = new ProductRepository(fakeDbContext);
+
+        var result = await productRepository.AddProductsAsync(productsToAdd);
+
+        Assert.IsType<Result<List<ProductEntity>>>(result);
+        Assert.True(result.Status is ResultStatus.Success);
+
+        Assert.NotNull(result.Value);
+        Assert.Equal(2, result.Value.Count);
+        Assert.Equal(1, result.Value[0].Id);
+        Assert.Equal("Product 1", result.Value[0].Name);
+        Assert.Equal(2, result.Value[1].Id);
+        Assert.Equal("Product 2", result.Value[1].Name);
+
+        Assert.Equal(2, fakeDbContext.Products.Count());
     }
 }
