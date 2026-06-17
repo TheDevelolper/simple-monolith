@@ -15,16 +15,30 @@ public record Product()
     /// </summary>
     /// <param name="productEntity">The product entity to map</param>
     /// <returns></returns>
-    public static Product? From(ProductEntity? productEntity)
+    public static Product From(ProductEntity productEntity)
     {
-        if (productEntity == null) return null;
-        
         var result = new Product()
         {
             Id = productEntity.Id,
             Name = productEntity.Name
         };
         
+        return result;
+    }
+
+    /// <summary>
+    /// Creates a product entity from a domain product.
+    /// </summary>
+    /// <param name="product">The domain product to map.</param>
+    /// <returns>The mapped product entity.</returns>
+    public static ProductEntity ToEntity(Product product)
+    {
+        var result = new ProductEntity()
+        {
+            Id = product.Id,
+            Name = product.Name
+        };
+
         return result;
     }
 }
