@@ -72,7 +72,6 @@ dotnet test
 - **ASP.NET Core MVC** with Razor views
 - **Entity Framework Core 10** (SQL Server)
 - **Custom `Result<T>` pattern** (no exceptions for control flow)
-- **Bootstrap 5 & jQuery** (client-side)
 - **.slnx** solution format
 
 ## Prerequisites
