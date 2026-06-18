@@ -1,5 +1,8 @@
 <Solution>
   <Folder Name="/Tests/" />
+  <Folder Name="/Tests/Architecture/">
+    <Project Path="MyApp.ArchitectureTests/MyApp.ArchitectureTests.csproj" />
+  </Folder>
   <Folder Name="/Tests/Integration/">
     <Project Path="MyApp.IntegrationTests\MyApp.IntegrationTests.csproj" />
   </Folder>
