@@ -12,8 +12,12 @@ public class ProductRepositoryTests
     [Fact]
     public void CanCreateRepository()
     {
-        var mockDbCtx = new Mock<ProductDbContext>();
-        var productRepository = new ProductRepository(mockDbCtx.Object);
+        var options = new DbContextOptionsBuilder<ProductDbContext>()
+            .UseInMemoryDatabase(Guid.NewGuid().ToString())
+            .Options;
+        
+        using var fakeDbContext = new ProductDbContext(options);
+        var productRepository = new ProductRepository(fakeDbContext);
         Assert.NotNull(productRepository);
     }
     

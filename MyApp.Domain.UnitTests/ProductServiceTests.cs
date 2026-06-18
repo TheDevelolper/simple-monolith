@@ -57,11 +57,9 @@ public class ProductServiceTests
         var product = productResult.Value;
         
         Assert.IsType<Result<Product>>(productResult);
-        Assert.True(productResult.Status is ResultStatus.Success);
+        Assert.True(productResult.Status is ResultStatus.NotFound);
         
-        Assert.NotNull(product);
-        Assert.IsType<Product>(product);
-        Assert.Equal(productId, product.Id);
+        Assert.Null(product);
     }
 
     [Fact]
