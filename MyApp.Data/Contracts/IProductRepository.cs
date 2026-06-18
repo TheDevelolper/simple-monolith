@@ -3,7 +3,7 @@ using MyApp.Shared;
 
 namespace Data.Contracts;
 
-public interface IProductRepository
+public interface IProductRepository: IRepository
 {
     Result<ProductEntity> GetProduct(int id);
     Result<IQueryable<ProductEntity>> GetProducts();
