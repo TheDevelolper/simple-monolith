@@ -1,0 +1,24 @@
+{
+  "author": "Kiran Randhawa",
+  "classifications": ["Simple Monolith"],
+  "identity": "Simple Monolith",
+  "name": "Kx Simple Monolith",
+  "shortName": "simple-monolith",
+  "sourceName": "MyApp",
+  "preferNameDirectory": true,
+  "sources": [
+    {
+      "modifiers": [
+        {
+          "exclude": [
+            "node_modules/**",
+            "bin/**",
+            "obj/**",
+            ".gitignore",
+            ".npmrc"
+          ]
+        }
+      ]
+    }
+  ]
+}

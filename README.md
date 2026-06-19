@@ -5,8 +5,9 @@ A [.NET template](https://learn.microsoft.com/en-us/dotnet/core/tools/custom-tem
 ## Quick Start
 
 ```bash
+
 # Install the template
-dotnet new install SimpleMonolith.Template
+dotnet new install .
 
 # Create a new project
 dotnet new simple-monolith -n YourAppName
@@ -33,31 +34,31 @@ dotnet new simple-monolith -n YourAppName
 
 **Dependency rules** (enforced by architecture tests):
 
-| Layer | May Reference |
-|---|---|
-| `Presentation` | Domain |
-| `Domain` | Data, Shared |
-| `Data` | Shared |
-| `Shared` | _(nothing)_ |
+| Layer          | May Reference |
+| -------------- | ------------- |
+| `Presentation` | Domain        |
+| `Domain`       | Data, Shared  |
+| `Data`         | Shared        |
+| `Shared`       | _(nothing)_   |
 
 ## Projects
 
-| Project | Description |
-|---|---|
+| Project              | Description                                                             |
+| -------------------- | ----------------------------------------------------------------------- |
 | `MyApp.Presentation` | ASP.NET Core MVC app with Razor views and a REST API (`/api/products`). |
-| `MyApp.Domain` | Business logic layer with domain models and service contracts. |
-| `MyApp.Data` | EF Core `DbContext`, entities, and repository implementations. |
-| `MyApp.Shared` | Shared primitives — the `Result<T>` pattern used across all layers. |
+| `MyApp.Domain`       | Business logic layer with domain models and service contracts.          |
+| `MyApp.Data`         | EF Core `DbContext`, entities, and repository implementations.          |
+| `MyApp.Shared`       | Shared primitives — the `Result<T>` pattern used across all layers.     |
 
 ## Testing
 
-| Project | Type | What It Covers |
-|---|---|---|
-| `MyApp.Domain.UnitTests` | Unit | `ProductService` logic with mocked repository |
-| `MyApp.Data.UnitTests` | Unit | `ProductRepository` with EF Core InMemory |
-| `MyApp.Presentation.UnitTests` | Unit | `ProductsController` with mocked service |
-| `MyApp.IntegrationTests` | Integration | Full API workflow via Testcontainers + WebApplicationFactory |
-| `MyApp.ArchitectureTests` | Architecture | Layer dependency rules via NetArchTest |
+| Project                        | Type         | What It Covers                                               |
+| ------------------------------ | ------------ | ------------------------------------------------------------ |
+| `MyApp.Domain.UnitTests`       | Unit         | `ProductService` logic with mocked repository                |
+| `MyApp.Data.UnitTests`         | Unit         | `ProductRepository` with EF Core InMemory                    |
+| `MyApp.Presentation.UnitTests` | Unit         | `ProductsController` with mocked service                     |
+| `MyApp.IntegrationTests`       | Integration  | Full API workflow via Testcontainers + WebApplicationFactory |
+| `MyApp.ArchitectureTests`      | Architecture | Layer dependency rules via NetArchTest                       |
 
 ```bash
 # Run all tests
