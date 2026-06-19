@@ -1,0 +1,7 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode", // formats code by rewriting layout according to Prettier rules
+    "editorconfig.editorconfig", // applies basic editor/whitespace rules like indentation, line endings, and final newline
+    "fullstackspider.visual-nuget" // provides a UI for managing NuGet packages in .NET projects
+  ]
+}

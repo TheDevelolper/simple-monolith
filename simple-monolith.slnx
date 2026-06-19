@@ -1,18 +1,27 @@
 <Solution>
+  <Folder Name="/src/" />
+  <Folder Name="/src/Data/">
+    <Project Path="src/Data/MyApp.Data/MyApp.Data.csproj" />
+  </Folder>
+  <Folder Name="/src/Domain/">
+    <Project Path="src/Domain/MyApp.Domain/MyApp.Domain.csproj" />
+  </Folder>
+  <Folder Name="/src/Presentation/">
+    <Project Path="src/Presentation/MyApp.Presentation/MyApp.Presentation.csproj" />
+  </Folder>
+  <Folder Name="/src/Shared/">
+    <Project Path="src/Shared/MyApp.Shared/MyApp.Shared.csproj" />
+  </Folder>
+  <Folder Name="/src/UnitTests/">
+    <Project Path="src/UnitTests/MyApp.Data.UnitTests/MyApp.Data.UnitTests.csproj" />
+    <Project Path="src/UnitTests/MyApp.Domain.UnitTests/MyApp.Domain.UnitTests.csproj" />
+    <Project Path="src/UnitTests/MyApp.Presentation.UnitTests/MyApp.Presentation.UnitTests.csproj" />
+  </Folder>
   <Folder Name="/Tests/" />
   <Folder Name="/Tests/Architecture/">
-    <Project Path="MyApp.ArchitectureTests/MyApp.ArchitectureTests.csproj" />
+    <Project Path="Tests/Architecture/MyApp.ArchitectureTests/MyApp.ArchitectureTests.csproj" />
   </Folder>
   <Folder Name="/Tests/Integration/">
-    <Project Path="MyApp.IntegrationTests\MyApp.IntegrationTests.csproj" />
+    <Project Path="Tests/Integration/MyApp.IntegrationTests/MyApp.IntegrationTests.csproj" />
   </Folder>
-  <Folder Name="/Tests/Unit/">
-    <Project Path="MyApp.Data.UnitTests/MyApp.Data.UnitTests.csproj" />
-    <Project Path="MyApp.Domain.UnitTests/MyApp.Domain.UnitTests.csproj" />
-    <Project Path="MyApp.Presentation.UnitTests/MyApp.Presentation.UnitTests.csproj" />
-  </Folder>
-  <Project Path="MyApp.Data\MyApp.Data.csproj" />
-  <Project Path="MyApp.Domain\MyApp.Domain.csproj" />
-  <Project Path="MyApp.Presentation/MyApp.Presentation.csproj" />
-  <Project Path="MyApp.Shared/MyApp.Shared.csproj" />
 </Solution>

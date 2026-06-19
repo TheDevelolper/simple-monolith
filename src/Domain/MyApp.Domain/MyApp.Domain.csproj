@@ -9,8 +9,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\MyApp.Data\MyApp.Data.csproj" />
-      <ProjectReference Include="..\MyApp.Shared\MyApp.Shared.csproj" />
+      <ProjectReference Include="..\..\Data\MyApp.Data\MyApp.Data.csproj" />
+      <ProjectReference Include="..\..\Shared\MyApp.Shared\MyApp.Shared.csproj" />
     </ItemGroup>
 
 </Project>
